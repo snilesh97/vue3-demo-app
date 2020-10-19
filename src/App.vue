@@ -1,12 +1,12 @@
 <template>
 	<AppHeader/>
-	<DcHeros/>
+	<router-view></router-view>
 </template>
 
 <script>
 import AppHeader from "./components/AppHeader";
-import DcHeros from "./components/DcHeros";
+
 export default {
-	components: { AppHeader, DcHeros }
+	components: { AppHeader }
 }
 </script>>
