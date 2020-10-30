@@ -3,7 +3,7 @@
   <div class="flex w-full">
     <section class="flex m-auto w-10/12 h-screen">
       <article class="w-1/2 border ">
-        <textarea class="w-full h-full" :value="text" @input="update"> </textarea>
+        <textarea class="w-full h-full" :value="text" @input="update" ref="markdownTextArea"> </textarea>
       </article>
       <article class="w-1/2 border bg-green-100" v-html="markedText"></article>
     </section>
@@ -30,6 +30,9 @@ export default {
       const task = () => (this.text = e.target.value);
       this.debounce(task, 500)
     }
+  },
+  mounted() {
+    this.$refs.markdownTextArea.focus();
   }
 
 }

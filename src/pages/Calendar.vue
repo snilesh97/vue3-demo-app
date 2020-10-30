@@ -18,7 +18,6 @@
         <button class="px-2 border rounded" @click="next"> Next</button>
       </section>
     </div>
-  
   </div>
 </template>
 
