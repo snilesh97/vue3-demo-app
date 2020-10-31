@@ -13,7 +13,7 @@ export default {
   components: { AppHeader, LoginModal },
   data() {
     return {
-      isLoginOpen: false,
+      isLoginOpen: true,
       isLoggedIn: false,
       authUser: {}
     }
@@ -31,4 +31,4 @@ export default {
     });
   }
 }
-</script>>
+</script>
