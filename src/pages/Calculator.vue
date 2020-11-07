@@ -33,7 +33,8 @@
 </template>
 
 <script>
-import {onMounted, onUnmounted, ref} from 'vue';
+import {ref} from 'vue';
+import useWindowEvent from '../utilities/composition/useWindowEvent';
 export default {
   setup() {
     const operations = ['+', '-', '*', '/'];
@@ -85,11 +86,8 @@ export default {
     const division = () => currentNumber.value = prevNumber.value / currentNumber.value;
     const clear = () => currentNumber.value = '';
     const handleKeyDown = (e) =>  pressed(e.key);
-
-    onMounted(()=> window.addEventListener('keydown', handleKeyDown));
-    onUnmounted(()=> window.removeEventListener('keydown', handleKeyDown));
-  
-   return {currentNumber, pressed, selectedOperation, prevNumber};
+    useWindowEvent('keydown' ,handleKeyDown);
+    return {currentNumber, pressed, selectedOperation, prevNumber};
   }
 }
 </script>
