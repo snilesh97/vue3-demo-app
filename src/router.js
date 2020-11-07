@@ -4,6 +4,7 @@ import Calendar from './pages/Calendar';
 import Markdown from './pages/Markdown';
 import Slider from './pages/Slider';
 import Calculator from './pages/Calculator';
+import ReuseableModal from './pages/ReuseableModal';
 import Home from './pages/Home';
 
 const routes = [
@@ -12,6 +13,7 @@ const routes = [
   { path: '/markdown', component: Markdown },
   { path: '/slider', component: Slider },
   { path: '/calculator', component: Calculator },
+  { path: '/reuseable-modal', component: ReuseableModal },
   { path: '/', component: Home },
 
 ];
