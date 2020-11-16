@@ -7,7 +7,7 @@
         <h3 class="font-bold">{{currentYear}}</h3>
       </section>
       <section class="flex my-3">
-        <p class="p-2 text-center" style="width: 14.28%" v-for="day in days" v-text="day" :key="day"></p>
+        <p class="p-2 text-center" style="width: 14.28%" v-for="day in days" v-text="day" :key="day"/>
       </section>
       <section class="flex flex-wrap">
         <p class="text-center" style="width: 14.28%" v-for="num in startDate()" :key="num"></p>
@@ -27,48 +27,48 @@ export default {
     return {
       currentMonth: new Date().getMonth(),
       currentYear: new Date().getFullYear(),
-      days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat']
-    }
+      days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat'],
+    };
   },
   methods: {
     daysInMonth() {
       return new Date(this.currentYear, this.currentMonth + 1, 0).getDate();
     },
+
     startDate() {
       return new Date(this.currentYear, this.currentMonth).getDay();
     },
 
     next() {
       if (this.currentMonth === 11) {
-        this.currentYear++;
+        this.currentYear+=1;
         this.currentMonth = 0;
       } else {
-        this.currentMonth++
+        this.currentMonth+=1;
       }
     },
 
     previous() {
       if (this.currentMonth === 0) {
-        this.currentYear--;
+        this.currentYear-=1;
         this.currentMonth = 11;
-
       } else {
-        this.currentMonth--;
+        this.currentMonth-=1;
       }
     },
-    currentDateClass(num){
+
+    currentDateClass(num) {
       const currentFullDate = new Date(this.currentYear, this.currentMonth, num).toDateString();
       const calendarFullDate = new Date().toDateString();
       return currentFullDate === calendarFullDate ? 'text-red-600' : '';
-    }
+    },
   },
   computed: {
     currentMonthName() {
       return new Date(this.currentYear, this.currentMonth).toLocaleString('default', { month: 'long' });
     },
-
-  }
-}
+  },
+};
 </script>
 
 <style>

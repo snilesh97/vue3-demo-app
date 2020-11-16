@@ -19,15 +19,13 @@
 
 <script>
 export default {
-  setup(_, { emit }) {  
+  setup(_, { emit }) {
     function close(){
       console.log("close called");
       emit("close");
     }
-     
     return { close };
   }
-
 }
 </script>
 

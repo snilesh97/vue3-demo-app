@@ -9,7 +9,6 @@
 <script>
 import firebase from '../utilities/firebase'
 export default {
-  props: ['isLoggedIn'],
   data () {
     return {
       links: [
@@ -26,6 +25,11 @@ export default {
   methods: {
     logout() {
       firebase.auth().signOut();
+    }
+  },
+  computed:{
+    isLoggedIn() {
+      return this.$store.state.isLoggedIn
     }
   }
 }

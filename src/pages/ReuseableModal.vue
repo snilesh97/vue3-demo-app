@@ -6,7 +6,7 @@
         <template #title> <div class="text-red-500">Red Modal</div></template>
         <template #body> This is Red Modal Body</template>
       </Modal>
-      <button 
+      <button
         class="border rounded px-2 mx-4 bg-red-500 text-white"
         @click="isRedModalOpen = true"> Open Red Modal
       </button>
@@ -15,23 +15,24 @@
         <template #title> <div class="text-blue-500">Blue Modal</div></template>
         <template #body> This is Blue Modal Body</template>
       </Modal>
-      <button 
+      <button
         class="border rounded px-2 mx-4 bg-blue-500 text-white"
         @click="isBlueModalOpen = true"> Open Blue Modal
       </button>
     </div>
   </section>
 </template>
- 
+
 <script>
 import Modal from '../components/Modal'
 import {ref} from 'vue';
+
 export default {
   components: { Modal },
   setup() {
     const isRedModalOpen = ref(false);
     const isBlueModalOpen = ref(false);
-  
+
     return { isRedModalOpen, isBlueModalOpen }
   }
 }

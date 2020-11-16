@@ -12,7 +12,7 @@ export default {
     loginWithGoogle() {
       var provider = new firebase.auth.GoogleAuthProvider();
       firebase.auth().signInWithPopup(provider).then(()=> {
-        this.$emit('close-login-from-google-login') 
+        this.$emit('close-login-from-google-login')
       });
     },
   }
