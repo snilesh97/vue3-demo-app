@@ -7,6 +7,7 @@ import Calculator from './pages/Calculator';
 import ReuseableModal from './pages/ReuseableModal';
 import Chat from './pages/Chat';
 import Home from './pages/Home';
+import UserCrud from './pages/UserCrud'
 import store from './store/index';
 
 const routes = [
@@ -24,6 +25,10 @@ const routes = [
     path: '/chat',
     component: Chat,
     meta: { middleware: 'auth' }
+  },
+  {
+    path: '/user-crud',
+    component: UserCrud,
   },
   { path: '/', component: Home },
 
