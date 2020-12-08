@@ -7,7 +7,8 @@ import Calculator from './pages/Calculator';
 import ReuseableModal from './pages/ReuseableModal';
 import Chat from './pages/Chat';
 import Home from './pages/Home';
-import UserCrud from './pages/UserCrud'
+import UserCrud from './pages/UserCrud';
+import Tensorflow from './pages/Tensorflow';
 import store from './store/index';
 
 const routes = [
@@ -28,7 +29,11 @@ const routes = [
   },
   {
     path: '/user-crud',
-    component: UserCrud,
+    component: UserCrud
+  },
+  {
+    path: '/tensorflow',
+    component: Tensorflow
   },
   { path: '/', component: Home },
 
